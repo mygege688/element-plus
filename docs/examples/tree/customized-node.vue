@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-tree-container">
+  <div class="custom-tree-container，el-tree-node__content">
     <p>Using render-content</p>
     <el-tree
       :data="dataSource"
@@ -158,5 +158,21 @@ const dataSource = ref<Tree[]>([
   justify-content: space-between;
   font-size: 14px;
   padding-right: 8px;
+}
+  .el-tree-node__content {
+  position: relative;
+}
+
+.el-tree-node__content::after {
+  content: "";
+  background-image: url("your-icon.png");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
 </style>
